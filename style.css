@@ -1,0 +1,429 @@
+/* ============================================================
+   David Bilek — Portfolio
+   Single stylesheet
+   ============================================================ */
+
+:root {
+  --bg:        #080808;
+  --bg2:       #111111;
+  --text:      #f0f0f0;
+  --muted:     #666666;
+  --border:    #1e1e1e;
+  --font:      Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+a  { color: inherit; }
+
+/* ---- Base ---- */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #000;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: 56px;
+}
+
+header .site-title {
+  font-size: 0.95rem;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+}
+
+header .site-title a { text-decoration: none; }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+nav a:hover,
+nav a.active { color: var(--text); }
+
+/* Dropdown */
+.dropdown { position: relative; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: -1rem;
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  min-width: 170px;
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+
+.dropdown-content a {
+  display: block;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+
+.dropdown-content a:last-child { border-bottom: none; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 5%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+.home-wrap {
+  position: relative;
+  height: calc(100vh - 56px);
+  overflow: hidden;
+}
+
+.home-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.home-name {
+  position: absolute;
+  bottom: 7%;
+  left: 5%;
+  font-size: clamp(3.5rem, 11vw, 10rem);
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ============================================================
+   INNER PAGES — shared layout
+   ============================================================ */
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4rem 5% 6rem;
+}
+
+.page-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-bottom: 3rem;
+}
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+
+.bio p {
+  font-size: 0.93rem;
+  margin-bottom: 1.1em;
+}
+
+.bio-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* CV */
+.cv { margin-top: 4rem; }
+
+.cv-heading {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-section { margin-bottom: 3rem; }
+
+.cv-section-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.cv-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 0.8rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+  align-items: baseline;
+}
+
+.cv-row .yr { color: var(--muted); }
+
+/* Gigs */
+.gigs-block { margin-bottom: 2.5rem; }
+
+.gigs-year-label {
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.gig {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 0.6rem 1rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.86rem;
+  align-items: baseline;
+}
+
+.gig .gdate { color: var(--muted); }
+.gig .gtype { color: var(--muted); font-size: 0.78rem; text-align: right; white-space: nowrap; }
+
+/* ============================================================
+   COMPOSITIONS PAGE
+   ============================================================ */
+.composition {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.composition:first-child { padding-top: 0; }
+.composition:last-child { border-bottom: none; }
+
+.composition h3 {
+  font-size: 1.05rem;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+}
+
+.composition .comp-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+}
+
+.composition p {
+  font-size: 0.9rem;
+  max-width: 680px;
+  margin-bottom: 0.8em;
+}
+
+.sc-wrap { margin-top: 1rem; }
+
+.sc-credit {
+  font-size: 10px;
+  color: #888;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Interstate, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-weight: 100;
+}
+
+.sc-credit a { color: #888; text-decoration: none; }
+
+/* ============================================================
+   LIVE PAGE
+   ============================================================ */
+.live-piece {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+
+.live-piece:first-child { padding-top: 0; }
+.live-piece:last-child  { border-bottom: none; }
+
+.live-piece.reverse .live-text { order: 2; }
+.live-piece.reverse .live-img  { order: 1; }
+
+.live-text h3 {
+  font-size: 1.05rem;
+  font-weight: normal;
+  margin-bottom: 0.2rem;
+}
+
+.live-text .live-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+}
+
+.live-text p { font-size: 0.9rem; margin-bottom: 0.8em; }
+
+.live-img img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* ============================================================
+   INSTALLATIONS PAGE
+   ============================================================ */
+.installation {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.installation:first-child { padding-top: 0; }
+.installation:last-child  { border-bottom: none; }
+
+.installation h3 {
+  font-size: 1.05rem;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+}
+
+.installation .inst-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+}
+
+.inst-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.inst-text p {
+  font-size: 0.9rem;
+  margin-bottom: 0.8em;
+}
+
+.inst-text a {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.inst-text a:hover { color: var(--text); }
+
+.inst-img img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-section {
+  margin-bottom: 2.5rem;
+}
+
+.contact-section h2 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  font-weight: normal;
+}
+
+.contact-section a {
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.contact-section a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.contact-links { list-style: none; }
+.contact-links li { margin-bottom: 0.4rem; font-size: 0.9rem; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 800px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+  .bio-photo { order: -1; max-width: 280px; }
+
+  .live-piece,
+  .live-piece.reverse .live-text,
+  .live-piece.reverse .live-img {
+    grid-template-columns: 1fr;
+    order: unset;
+  }
+  .live-piece { display: block; }
+  .live-img   { margin-top: 1.5rem; }
+
+  .inst-body { grid-template-columns: 1fr; }
+  .inst-img  { margin-top: 1.5rem; }
+
+  .gig { grid-template-columns: 54px 1fr; }
+  .gig .gtype { grid-column: 2; text-align: left; }
+
+  nav ul { gap: 1.2rem; }
+}
+
+@media (max-width: 520px) {
+  header { padding: 0 4%; }
+  .page  { padding: 2.5rem 4% 4rem; }
+  .home-name { font-size: clamp(2.8rem, 14vw, 5rem); }
+  .cv-row { grid-template-columns: 90px 1fr; }
+  nav a { font-size: 0.8rem; }
+  nav ul { gap: 0.9rem; }
+}
