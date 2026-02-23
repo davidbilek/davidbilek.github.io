@@ -261,6 +261,13 @@ footer {
 
 .sc-wrap { margin-top: 1rem; }
 
+.sc-wrap iframe {
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.sc-wrap iframe:hover { filter: grayscale(0%); }
+
 .sc-credit {
   font-size: 10px;
   color: #888;
