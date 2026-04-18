@@ -7,7 +7,7 @@
   --bg:        #080808;
   --bg2:       #111111;
   --text:      #f0f0f0;
-  --muted:     #666666;
+  --muted:     #aaaaaa;
   --border:    #1e1e1e;
   --font:      Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
 }
@@ -99,7 +99,7 @@ footer {
   border-top: 1px solid var(--border);
   padding: 2.5rem 5%;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--muted);
   letter-spacing: 0.08em;
 }
@@ -141,7 +141,7 @@ footer {
 }
 
 .page-label {
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--muted);
@@ -174,7 +174,7 @@ footer {
 .cv { margin-top: 4rem; }
 
 .cv-heading {
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--muted);
@@ -186,7 +186,7 @@ footer {
 .cv-section { margin-bottom: 3rem; }
 
 .cv-section-title {
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--muted);
@@ -200,7 +200,7 @@ footer {
   gap: 0.8rem;
   padding: 0.45rem 0;
   border-bottom: 1px solid var(--border);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   align-items: baseline;
 }
 
@@ -222,12 +222,12 @@ footer {
   gap: 0.6rem 1rem;
   padding: 0.4rem 0;
   border-bottom: 1px solid var(--border);
-  font-size: 0.86rem;
+  font-size: 0.93rem;
   align-items: baseline;
 }
 
 .gig .gdate { color: var(--muted); }
-.gig .gtype { color: var(--muted); font-size: 0.78rem; text-align: right; white-space: nowrap; }
+.gig .gtype { color: var(--muted); font-size: 0.86rem; text-align: right; white-space: nowrap; }
 
 /* ============================================================
    COMPOSITIONS PAGE
